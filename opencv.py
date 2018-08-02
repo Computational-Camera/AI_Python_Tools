@@ -13,7 +13,7 @@ print(image.shape)
 cv2.imwrite('img.png', img)
 
 #resize
-img = cv2.resize(img,(y2,x2))
+img = cv2.resize(img,(w2,h2))
 
 #pixel visit
 (b,g,r) = img[x,y]
