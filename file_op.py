@@ -16,5 +16,5 @@ except:
 for root, dirs, files in sorted(os.walk(DATA_DIR)):
     for f in files:
         fullpath = os.path.join(root, f)
-            if os.path.splitext(fullpath)[1] == '.json':
-                file_id = f.split('.') 
+        if os.path.splitext(fullpath)[1] == '.json':
+            file_id = f.split('.') 
