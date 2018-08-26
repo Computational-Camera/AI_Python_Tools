@@ -25,7 +25,7 @@ cv2.boundingRect(seg)  # [x,y,w,h]
 cv2.contourArea (seg)
 
 #draw image
-cv2.puText(img, "blabla", (x,y), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (r,g,b), 2)
+cv2.putText(img, "blabla", (x,y), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (r,g,b), 2)
 cv2.rectangle(img, (x1,y1), (x2,y2), (0, 0, 255), 3)#, -1 solid
 
 #color coding
