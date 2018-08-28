@@ -1,12 +1,12 @@
 import cv2
 
 #init an array
-image = np.zeros((height,width,3), np.uint8)
+img = np.zeros((height,width,3), np.uint8)
 
 #load image from file
 img = cv2.imread('test.png')# add additional flag 0:for mono import, -1: 16bit
-height = image.shape[0]
-width  = image.shape[1]
+height = img.shape[0]
+width  = img.shape[1]
 # or  height, width, channel = image.shape
 print(image.shape)
 
