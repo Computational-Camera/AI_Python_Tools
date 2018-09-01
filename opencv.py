@@ -10,12 +10,23 @@ width  = img.shape[1]
 # or  height, width, channel = image.shape
 print(image.shape)
 
+length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+#load video
+while(length):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+    length = length - 1
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    cv2.imshow('frame',gray)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
 #write image
 cv2.imwrite('img.png', img)
 
 #resize
 img = cv2.resize(img,(w2,h2))
-
+img = cv2.pyrDown(img) #pyrUp
 #pixel visit
 (b,g,r) = img[x,y]
 
