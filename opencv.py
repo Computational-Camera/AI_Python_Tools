@@ -40,7 +40,7 @@ cv2.contourArea (seg)
 #draw image
 cv2.putText(img, "blabla", (x,y), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (r,g,b), 2)
 cv2.rectangle(img, (x1,y1), (x2,y2), (0, 0, 255), 3)#, -1 solid
-
+cv2.line(img,(x1,y1),(x2,y2),(255,0,0),1)
 #color coding
 img2 = cv2.applyColorMap(img, cv2.COLORMAP_JET)
 
