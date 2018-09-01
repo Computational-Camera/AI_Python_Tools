@@ -11,6 +11,8 @@ width  = img.shape[1]
 print(image.shape)
 
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+width  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 #load video
 while(length):
     # Capture frame-by-frame
