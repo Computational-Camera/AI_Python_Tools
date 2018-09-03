@@ -10,6 +10,7 @@ width  = img.shape[1]
 # or  height, width, channel = image.shape
 print(image.shape)
 
+cap = cv2.VideoCapture('filename.avi')
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 width  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -22,7 +23,6 @@ while(length):
     cv2.imshow('frame',gray)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
 #write image
 cv2.imwrite('img.png', img)
 
