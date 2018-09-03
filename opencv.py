@@ -7,9 +7,10 @@ img = np.zeros((height,width,3), np.uint8)
 img = cv2.imread('test.png')# add additional flag 0:for mono import, -1: 16bit
 height = img.shape[0]
 width  = img.shape[1]
-# or  height, width, channel = image.shape
+# or  height, width, channel = image.shapecap.release()
+out.release()
 print(image.shape)
-
+###################################################
 cap = cv2.VideoCapture('filename.avi')
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 width  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -25,7 +26,8 @@ while(length):
         break
 #write image
 cv2.imwrite('img.png', img)
-
+cap.release()
+####################################################
 #resize
 img = cv2.resize(img,(w2,h2))
 img = cv2.pyrDown(img) #pyrUp
