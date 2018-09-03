@@ -11,6 +11,7 @@ width  = img.shape[1]
 out.release()
 print(image.shape)
 ###################################################
+out = cv2.VideoWriter('x.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 20.0, (width,height))
 cap = cv2.VideoCapture('filename.avi')
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 width  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -19,6 +20,7 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 while(length):
     # Capture frame-by-frame
     ret, frame = cap.read()
+    out.write(frame)
     length = length - 1
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     cv2.imshow('frame',gray)
@@ -27,6 +29,7 @@ while(length):
 #write image
 cv2.imwrite('img.png', img)
 cap.release()
+out.release()
 ####################################################
 #resize
 img = cv2.resize(img,(w2,h2))
