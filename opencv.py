@@ -12,7 +12,14 @@ out.release()
 print(image.shape)
 ###################################################
 out = cv2.VideoWriter('x.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 20.0, (width,height))
-cap = cv2.VideoCapture('filename.avi')
+cap = cv2.VideoCapture('filename.avi')  # video file
+cap = cv2.VideoCapture("nvcamerasrc ! video/x-raw(memory:NVMM), \
+                        width=(int)2592, height=(int)1944,format=(string)I420, \
+                        framerate=(fraction)30/1 ! nvvidconv flip-method=0 !\
+                        video/x-raw, format=(string)BGRx ! videoconvert !\
+                        video/x-raw, format=(string)BGR ! appsink")  #stream from cmera, Video4Linux
+if not cap.isOpened():
+    raise IOError("Couldn't open webcam or video")
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 width  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
