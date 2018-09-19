@@ -18,3 +18,14 @@ for root, dirs, files in sorted(os.walk(DATA_DIR)):
         fullpath = os.path.join(root, f)
         if os.path.splitext(fullpath)[1] == '.json':
             file_id = f.split('.') 
+            
+import pandas as pd 
+
+frame_id    = []  
+label_id    = []  
+class_id    = [] 
+boxes_list  = [] 
+confidence  = []
+
+df  = pd.DataFrame({'Frame_ID':frame_id, 'Lable_ID':obj_class, 'Class':obj_class, 'Confidence':confidence, 'Box':boxes_list}) 
+df.to_csv(OUTPUT_CSV_DIR, index=False, columns=['Frame_ID', 'Lable_ID', 'Class', 'Confidence', 'Box']) # add date         
