@@ -10,4 +10,9 @@ def indices(lst, element):
         except ValueError:
             return result
         result.append(offset)
-        
+
+#create the unique name list from a list
+label_names = list(set(labels))
+
+#sort the list in alphabet order
+label_names_sorted = sorted(label_names)
