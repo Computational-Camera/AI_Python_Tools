@@ -16,3 +16,7 @@ label_names = list(set(labels))
 
 #sort the list in alphabet order
 label_names_sorted = sorted(label_names)
+
+#read a list from CSV
+f = pd.read_csv('./data/sample_submission.csv')
+image_id = f['id'].tolist()
