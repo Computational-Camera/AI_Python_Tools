@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd 
 
 #find index of arrays that has same tag
 def indices(lst, element):
