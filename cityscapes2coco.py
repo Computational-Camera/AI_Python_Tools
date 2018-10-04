@@ -1,6 +1,6 @@
 #borrowed from detection generate coco format annotations, slightly modified and reduced
 #Dependency cocoapi and cityscape scripts (need modification, see detection)
-
+#output: invalid contour need to check
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -19,20 +19,8 @@ import detectron.utils.segms as segms_util
 import detectron.utils.boxes as bboxs_util
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(description='Convert dataset')
-    parser.add_argument(
-        '--dataset', help="cocostuff, cityscapes", default=None, type=str)
-    parser.add_argument(
-        '--outdir', help="output dir for json files", default=None, type=str)
-    parser.add_argument(
-        '--datadir', help="data dir for annotations to be converted",
-        default=None, type=str)
-    if len(sys.argv) == 1:
-        parser.print_help()
-        sys.exit(1)
-    return parser.parse_args()
-
+DATADIR    = "../"
+OUTPUTDIR  = "./"
 
 # for Cityscapes
 def getLabelID(self, instID):
@@ -155,7 +143,7 @@ def convert_cityscapes_instance_only(data_dir, out_dir):
 if __name__ == '__main__':
     #args = parse_args()
     #if args.dataset == "cityscapes_instance_only":
-    convert_cityscapes_instance_only("../", "./")
+    convert_cityscapes_instance_only(DATADIR,OUTPUTDIR)
     #else:
     #    print("Dataset not supported: %s" % args.dataset)
 
