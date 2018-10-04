@@ -3,6 +3,9 @@
 import glob, os
 import shutil
 
+# get absolute path
+dir2 = os.path.abspath(dir)
+
 #copy files
 
 if not os.path.exists(directory):
