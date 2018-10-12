@@ -3,3 +3,6 @@ image_tensor = (torch.from_numpy(image).permute(2, 0, 1).contiguous()).unsqueeze
 
 #tensor to cuda tensor
 tensor_gpu = Variable(tesnor_cpu).cuda(async=True)
+
+#tensor to numpy
+data = tensor_gpu.priors.cpu().numpy()
