@@ -2,11 +2,15 @@ import cv2
 import numpy as np
 import face_recognition   #dlib?
 
-face_locations = []
-
+face_locations    = []
+db_face_encodings = []
 # Load the jpg file into a numpy array
 image = face_recognition.load_image_file("./1.jpg")
 face_locations = face_recognition.face_locations(image, model="cnn")#
+face_encodings = face_recognition.face_encodings(image, face_locations)
+db_face_encodings.append(face_encodings[0].ravel()) #128 size vector
+
+db_array = np.asarray(db_face_encodings) # YOU CAN THEN SAVE IT TO DATABASE
 
 for face_location in face_locations:
     top, right, bottom, left = face_location
