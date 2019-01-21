@@ -1,3 +1,7 @@
+
+#tensor declaration
+image_tensor = torch.zeros([480, 640], dtype=torch.int32)
+
 #image to 4D tensor
 image_tensor = (torch.from_numpy(image).permute(2, 0, 1).contiguous()).unsqueeze(0)
 
