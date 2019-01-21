@@ -1,5 +1,3 @@
-
-
 import glob, os
 import shutil
 
@@ -32,3 +30,6 @@ confidence  = []
 
 df  = pd.DataFrame({'Frame_ID':frame_id, 'Lable_ID':obj_class, 'Class':obj_class, 'Confidence':confidence, 'Box':boxes_list}) 
 df.to_csv(OUTPUT_CSV_DIR, index=False, columns=['Frame_ID', 'Lable_ID', 'Class', 'Confidence', 'Box']) # add date         
+
+#save numpy array to csv
+np.savetxt('matrix.csv', matrix, delimiter=",")
