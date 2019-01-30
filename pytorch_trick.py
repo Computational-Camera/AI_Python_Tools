@@ -1,3 +1,6 @@
+#find the version
+import torch
+print(torch.__version__)
 
 #tensor declaration
 image_tensor = torch.zeros([480, 640], dtype=torch.int32)
