@@ -16,3 +16,6 @@ data = tensor_gpu.cpu().numpy()
 #in case grad use
 data = tensor_gpu.detach().cpu().numpy()
 
+#load .pth
+torch.load(*.pth)
+
