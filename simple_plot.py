@@ -19,7 +19,8 @@ plt.savefig('label_hist.png')
 plt.figure()
 
 #draw mulitple curves
-plt.plot(t,AP,  label='--1')
+t = np.linspace(1, 200000, num=200)
+plt.plot(t, data, label='--1')
 plt.legend()
 
 #to display multi figures use this at the end of the code
