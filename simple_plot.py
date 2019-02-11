@@ -17,3 +17,10 @@ axes.set_xlim([33,40])
 
 plt.savefig('label_hist.png')
 plt.figure()
+
+#draw mulitple curves
+plt.plot(t,AP,  label='--1')
+plt.legend()
+
+#to display multi figures use this at the end of the code
+plt.show()
