@@ -13,3 +13,6 @@ dictionary   d = {'key1:apple','key2:banna','key3:mango'}
 d.items() 
 d.keys() 
 d.values
+
+#greek symbol
+#α, β, λ
