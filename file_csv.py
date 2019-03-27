@@ -32,3 +32,6 @@ df.to_csv(OUTPUT_CSV_DIR, index=False, columns=['Frame_ID', 'Lable_ID', 'Class',
 for file in glob.glob("./*.csv"):
     df = pd.read_csv(file)
     labels   = df['label'].values.tolist()
+
+#creat folder
+os.makedirs(out_dir +'/checkpoint', exist_ok=True)
