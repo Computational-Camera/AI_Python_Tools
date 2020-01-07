@@ -16,7 +16,7 @@ axes.set_xlim([33,40])
 #axes.set_ylim([0,150000])
 
 plt.savefig('label_hist.png')
-plt.figure()
+plt.figure(figsize=(8, 8)). #image resolution 800 by 800
 
 #draw mulitple curves
 t = np.linspace(1, 200000, num=200)
