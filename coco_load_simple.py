@@ -1,3 +1,4 @@
+    #formatl explaination linke http://cocodataset.org/#format-data
     #load coco annotations file to obtain annotations
     #without using coco API
     import json
