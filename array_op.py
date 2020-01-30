@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd 
 
+#viste elements in a pattern
+data[start:end:interval]
+
 #find index of arrays that has same tag
 def indices(lst, element):
     result = []
