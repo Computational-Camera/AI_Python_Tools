@@ -23,5 +23,10 @@ t = np.linspace(1, 200000, num=200)
 plt.plot(t, data, label='--1')
 plt.legend()
 
+
+#plot pie chart
+plt.pie(sizes, explode=data, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=40)
+
+
 #to display multi figures use this at the end of the code
 plt.show()
