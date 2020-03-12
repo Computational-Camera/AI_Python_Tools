@@ -9,7 +9,7 @@ image_tensor = torch.zeros([480, 640], dtype=torch.int32)
 image_tensor = (torch.from_numpy(image).permute(2, 0, 1).contiguous()).unsqueeze(0)
 
 #tensor to cuda tensor
-tensor_gpu = Variable(tesnor_cpu).cuda(async=True)
+tensor_gpu = Variable(tesnor_cpu).cuda(non_blocking=True)
 
 #tensor to numpy
 data = tensor_gpu.cpu().numpy()
