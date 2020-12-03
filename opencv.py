@@ -44,8 +44,15 @@ img = cv2.pyrDown(img) #pyrUp
 #pixel visit
 (b,g,r) = img[x,y]
 
+#detect contour
+contours, hierarchy = cv2.findContours(image, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+#draw contour
+for i in range(len(contours)):
+  color = (rng.randint(0,256), rng.randint(0,256), rng.randint(0,256))
+  cv2.drawContours(drawing, contours, i, color, 2, cv2.LINE_8, hierarchy, 0)
+
 #contour to bounding box
-cv2.boundingRect(seg)  # [x,y,w,h]
+x,y,w,h = cv2.boundingRect(seg)
 #countour to area
 cv2.contourArea (seg)
 
