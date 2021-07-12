@@ -35,3 +35,8 @@ for file in glob.glob("./*.csv"):
 
 #creat folder
 os.makedirs(out_dir +'/checkpoint', exist_ok=True)
+
+#open excel file
+xl = pd.ExcelFile('~/data.xlsx')
+df = xl.parse("sheet1") #get the sheet
+d  = np.column_stack((df['a'], df['b'])) #form data
