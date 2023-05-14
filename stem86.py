@@ -4,7 +4,7 @@ n = int(input())
 data_input = input().split(" ")
 for d in data_input:
     d_in.append(int(d))
-
+A = [int(temp) for temp in input().strip().split()]
 # simple sort
 data  = sorted(d_in)
     
